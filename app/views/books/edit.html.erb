@@ -2,13 +2,14 @@
 
 <%= form_for(@book) do |f| %>
 <% if @book.errors.any? %>
-        <ul>
-            <% @book.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-        </ul>
-    <% end %>
-
+  <div class="alert alert-warning">
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
     <%= f.label :title%>
     <%= f.text_field :title%>
