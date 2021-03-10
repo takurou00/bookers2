@@ -34,6 +34,7 @@
 <%= form_for(@book) do |f| %>
 <% if @book.errors.any? %>
   <div class="alert alert-warning">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this product from being saved:</h2>
     <ul>
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
