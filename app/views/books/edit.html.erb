@@ -1,5 +1,5 @@
 <h1>Editing Book</h1>
-
+  <%= flash[:notice] %>
 <%= form_for(@book) do |f| %>
 <% if @book.errors.any? %>
   <div class="alert alert-warning">
@@ -10,7 +10,6 @@
     </ul>
   </div>
 <% end %>
-
     <%= f.label :title%>
     <%= f.text_field :title%>
     <br>
@@ -18,5 +17,5 @@
     <%= f.text_area :body%>
     <%= f.submit%>
 <%end%>
-<%= link_to "Back",books_path%>
-<%= link_to "Edit",edit_book_path(@book)%>
+
+<%= link_to "Show", book_path(@book) %>|<%= link_to "Back", books_path %>
